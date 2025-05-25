@@ -4,7 +4,7 @@ pcx_fl_list = [12,15,18,20,24,25,30,36,42,48,50,54,60,72,84,100]
 vertical = 24
 horizontal = 48
 
-f = 35
+f = 50
 
 # x1.33 with anamorphic adaptor : 48 * 24
 # xpan panorama : 65 * 24
@@ -26,7 +26,7 @@ tmp = []
 for f1 in pcv_fl_list:
     for f2 in pcx_fl_list:
         m = abs(f1) / abs(f2)
-        if m < 0.8: # magnification maximum
+        if 0.5 < m < 0.9: # magnification maximum / minimum
             d = f1+f2
             kv, kh = k_calc(m,d,f)
             dia = dia_calc(kv,kh)
